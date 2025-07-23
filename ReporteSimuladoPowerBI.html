@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Pagos Validados</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6f8;
+        }
+        header {
+            background: #0078d4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .filters, .summary, .table-container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .filters select, .filters input {
+            margin: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .summary {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card h2 {
+            color: #0078d4;
+            margin: 10px 0 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        th {
+            background: #e1effe;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Reporte de Pagos Validados</h1>
+    </header>
+
+    <section class="filters">
+        <label for="empresa">Empresa:</label>
+        <select id="empresa">
+            <option value="">Todas</option>
+            <option>Empresa 1</option>
+            <option>Empresa 2</option>
+            <option>Empresa 3</option>
+        </select>
+
+        <label for="tipo">Tipo de Pago:</label>
+        <select id="tipo">
+            <option value="">Todos</option>
+            <option>Efectivo</option>
+            <option>Tarjeta Crédito</option>
+            <option>Transferencia</option>
+        </select>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha">
+    </section>
+
+    <section class="summary">
+        <div class="card">
+            <h3>Total de Pagos</h3>
+            <h2>50</h2>
+        </div>
+        <div class="card">
+            <h3>Pagos Validados</h3>
+            <h2>45</h2>
+        </div>
+        <div class="card">
+            <h3>Monto Total</h3>
+            <h2>$4.800.000</h2>
+        </div>
+    </section>
+
+    <section class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Empresa</th>
+                    <th>Ciudad</th>
+                    <th>Fecha de Pago</th>
+                    <th>Monto</th>
+                    <th>Tipo de Pago</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Empresa 1</td>
+                    <td>Bogotá</td>
+                    <td>2025-07-01</td>
+                    <td>$120.000</td>
+                    <td>Tarjeta Crédito</td>
+                    <td>Validado</td>
+                </tr>
+                <tr>
+                    <td>Empresa 2</td>
+                    <td>Medellín</td>
+                    <td>2025-07-03</td>
+                    <td>$95.000</td>
+                    <td>Efectivo</td>
+                    <td>Validado</td>
+                </tr>
+                <tr>
+                    <td>Empresa 3</td>
+                    <td>Cali</td>
+                    <td>2025-07-04</td>
+                    <td>$110.000</td>
+                    <td>Transferencia</td>
+                    <td>Rechazado</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
